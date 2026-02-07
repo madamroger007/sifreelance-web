@@ -133,7 +133,7 @@
             class="w-full bg-gray-50 dark:bg-gray-800 border-none rounded-lg py-3 px-4 text-sm focus:ring-2 focus:ring-primary/50 transition-all dark:text-white"
             placeholder="Enter API Key"
             type="password"
-            value="sk_test_4eC39HqLyjWDarjtT1zdp7dc"
+            value=""
             readonly
           />
           <button
