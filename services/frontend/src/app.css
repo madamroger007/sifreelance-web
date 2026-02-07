@@ -1,0 +1,82 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-primary: #3713ec;
+    --color-background-light: #f8fafc;
+    --color-background-dark: #0f172a;
+}
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .pb-safe-area-inset-bottom {
+        padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+
+    .animate-in {
+        animation: animate-in 0.3s ease-out forwards;
+    }
+
+    .fade-in {
+        opacity: 0;
+    }
+
+    .slide-in-from-bottom-8 {
+        transform: translateY(2rem);
+    }
+
+    .slide-in-from-left-4 {
+        transform: translateX(-1rem);
+    }
+
+    .slide-in-from-right-4 {
+        transform: translateX(1rem);
+    }
+
+    .slide-in-from-top-4 {
+        transform: translateY(-1rem);
+    }
+
+    .zoom-in-95 {
+        transform: scale(0.95);
+    }
+
+    .duration-500 {
+        animation-duration: 0.5s;
+    }
+
+    .duration-300 {
+        animation-duration: 0.3s;
+    }
+}
+
+@keyframes animate-in {
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1);
+    }
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: 'liga';
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
