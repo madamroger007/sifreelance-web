@@ -1,5 +1,25 @@
 @import './app.css';
 
+@layer base {
+    .bg-gradient-linear-to-b {}
+
+    .bg-gradient-linear-r-to-l {
+        background: #343438;
+        background: linear-gradient(346deg, rgba(52, 52, 56, 1) 8%, rgba(3, 2, 2, 1) 14%, rgba(4, 2, 3, 1) 21%, rgba(13, 6, 25, 1) 85%, rgba(15, 7, 29, 1) 88%, rgba(95, 91, 115, 1) 97%);
+
+
+    }
+
+    .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        line-height: 1;
+        display: inline-block;
+        white-space: nowrap;
+    }
+}
+
 @layer components {
     .btn-primary {
         @apply cursor-pointer w-full bg-button-primary dark:bg-button-primary-dark text-text-dark font-semibold py-3 rounded-lg text-sm active:scale-[0.98] transition-transform border border-border dark:border-border-dark hover:bg-gray-600;
@@ -13,15 +33,19 @@
         @apply w-full bg-text-input dark:bg-text-input-dark rounded-lg py-3 px-4 text-sm transition-all dark:text-text-dark border border-border dark:border-border-dark;
     }
 
-    .card-component-container-1{
+    .card-component-container-1 {
         @apply flex items-center justify-between p-3 border-b border-border dark:border-border-dark;
     }
 
-    .card-component-container-2{
+    .card-component-container-2 {
         @apply bg-card dark:bg-card-dark p-5 rounded-2xl shadow-sm border border-slate-50 dark:border-border-dark;
     }
 
     .card-button-fixed-bottom-right {
         @apply fixed bottom-28 right-6 w-16 h-16 bg-card dark:bg-card-dark text-text dark:text-text-dark rounded-2xl shadow-2xl flex items-center justify-center active:scale-90 transition-transform z-40 border border-blue-500/30 dark:border-blue-50/20 hover:bg-gray-300;
+    }
+
+    .table-container-1 {
+        @apply bg-card dark:bg-card-dark rounded-xl shadow-sm border border-slate-50 dark:border-border-dark;
     }
 }

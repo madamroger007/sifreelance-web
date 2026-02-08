@@ -1,6 +1,6 @@
 import type { Project, Transaction, ScheduleEvent } from '$lib/types';
 
-export const projects = [
+export const projects: Project[] = [
     {
         name: 'Aurora Design System',
         client: 'Aurora Inc.',

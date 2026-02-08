@@ -9,20 +9,20 @@
 </script>
 
 <div
-  class="w-full max-w-md p-8 bg-white dark:bg-gray-900 rounded-3xl shadow-2xl border border-slate-100 dark:border-gray-800 space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-500"
+  class="w-full max-w-md p-8 bg-card dark:bg-card-dark rounded-3xl shadow-2xl border border-border dark:border-border-dark space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-500"
 >
   <div class="text-center space-y-2">
     <div class="flex justify-center mb-4">
       <div
-        class="size-16 rounded-2xl bg-primary flex items-center justify-center text-white shadow-xl shadow-primary/20"
+        class="size-16 rounded-2xl bg-card dark:bg-card-dark flex items-center justify-center text-text dark:text-text-dark shadow-xl shadow-primary/20 border border-border dark:border-border-dark"
       >
         <span class="material-symbols-outlined text-4xl">psychology</span>
       </div>
     </div>
-    <h1 class="text-3xl font-black text-slate-900 dark:text-white">
+    <h1 class="text-3xl font-black text-text dark:text-text-dark">
       Welcome Back
     </h1>
-    <p class="text-slate-500 dark:text-gray-400 font-medium">
+    <p class="text-text dark:text-text-dark font-medium">
       Sign in to your SiFreelancer account
     </p>
   </div>
@@ -31,26 +31,26 @@
     <div class="space-y-1.5">
       <label
         for="email"
-        class="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1"
+        class="text-xs font-bold text-text dark:text-text-dark uppercase tracking-widest ml-1"
         >Email Address</label
       >
       <input
         id="email"
         type="email"
         placeholder="name@company.com"
-        class="w-full px-4 py-3.5 rounded-xl border-slate-200 dark:border-gray-800 bg-slate-50 dark:bg-gray-950 dark:text-white focus:ring-primary focus:border-primary transition-all"
+        class="w-full px-4 py-3.5 rounded-xl bg-text-input dark:bg-text-input-dark focus:ring-primary focus:border-primary transition-all text-text dark:text-text-dark" 
       />
     </div>
     <div class="space-y-1.5">
       <div class="flex justify-between items-center px-1">
         <label
           for="password"
-          class="text-xs font-bold text-slate-400 uppercase tracking-widest"
+          class="text-xs font-bold text-text dark:text-text-dark uppercase tracking-widest"
           >Password</label
         >
         <a
           href="/forgot-password"
-          class="text-xs font-bold text-primary hover:underline"
+          class="text-xs font-bold text-primary hover:underline text-text dark:text-text-dark"
           >Forgot Password?</a
         >
       </div>
@@ -58,29 +58,29 @@
         id="password"
         type="password"
         placeholder="••••••••"
-        class="w-full px-4 py-3.5 rounded-xl border-slate-200 dark:border-gray-800 bg-slate-50 dark:bg-gray-950 dark:text-white focus:ring-primary focus:border-primary transition-all"
+        class="w-full px-4 py-3.5 rounded-xl bg-text-input dark:bg-text-input-dark text-text dark:text-text-dark focus:ring-primary focus:border-primary transition-all"
       />
     </div>
     <button
       onclick={handleLogin}
-      class="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
+      class="w-full bg-primary text-text dark:text-text-dark px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all border border-border dark:border-border-dark"
     >
       Login
     </button>
   </div>
 
   <div class="relative flex items-center py-2">
-    <div class="flex-grow border-t border-slate-100 dark:border-gray-800"></div>
+    <div class="flex-grow border-t border-border dark:border-border-dark"></div>
     <span
-      class="flex-shrink mx-4 text-xs font-bold text-slate-400 uppercase tracking-widest"
+      class="flex-shrink mx-4 text-xs font-bold text-text dark:text-text-dark uppercase tracking-widest"
       >or continue with</span
     >
-    <div class="flex-grow border-t border-slate-100 dark:border-gray-800"></div>
+    <div class="flex-grow border-t border-border dark:border-border-dark"></div>
   </div>
 
   <div class="grid grid-cols-2 gap-4">
     <button
-      class="flex items-center justify-center gap-2 py-3 rounded-xl border border-slate-200 dark:border-gray-800 hover:bg-slate-50 dark:hover:bg-white/5 transition-all"
+      class="flex items-center justify-center gap-2 py-3 rounded-xl border border-border dark:border-border-dark hover:bg-slate-50 dark:hover:bg-white/5 transition-all"
     >
       <img
         src="https://www.google.com/favicon.ico"
@@ -90,7 +90,7 @@
       <span class="text-sm font-bold dark:text-gray-300">Google</span>
     </button>
     <button
-      class="flex items-center justify-center gap-2 py-3 rounded-xl border border-slate-200 dark:border-gray-800 hover:bg-slate-50 dark:hover:bg-white/5 transition-all"
+      class="flex items-center justify-center gap-2 py-3 rounded-xl border border-border dark:border-border-dark hover:bg-slate-50 dark:hover:bg-white/5 transition-all"
     >
       <img
         src="https://github.com/favicon.ico"
@@ -101,7 +101,7 @@
     </button>
   </div>
 
-  <p class="text-center text-sm font-medium text-slate-500 dark:text-gray-400">
+  <p class="text-center text-sm font-medium text-text dark:text-text-dark">
     Don't have an account?
     <a href="/register" class="text-primary font-bold hover:underline"
       >Register</a

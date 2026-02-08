@@ -13,15 +13,12 @@ export type Tab =
     | 'settings';
 
 export interface Project {
-    id: string;
     name: string;
     client: string;
-    category: string;
-    status: 'In Progress' | 'Completed' | 'Review';
-    progress: number;
-    deadline: string;
-    budget: string;
-    team: string[];
+    type: string;
+    scope: string;
+    price: string;
+    status: string;
 }
 
 export interface Transaction {
