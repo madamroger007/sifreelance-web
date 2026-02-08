@@ -2,18 +2,6 @@
   import { isDarkMode } from "$lib/stores";
 </script>
 
-<header
-  class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800"
->
-  <div class="flex items-center justify-between px-4 py-3">
-    <h1 class="text-xl font-bold tracking-tight dark:text-white">Settings</h1>
-    <button
-      class="text-primary font-semibold text-sm px-3 py-1 rounded-full hover:bg-primary/10 transition-colors"
-      >Done</button
-    >
-  </div>
-</header>
-
 <main class="flex-1 overflow-y-auto px-4 py-6 space-y-6">
   <section class="space-y-3">
     <h3
@@ -22,14 +10,19 @@
       Appearance
     </h3>
     <div
-      class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800"
+      class="bg-card dark:bg-card-dark rounded-xl overflow-hidden shadow-sm border border-border dark:border-border-dark"
     >
-      <div
-        class="flex items-center justify-between p-3 border-b border-gray-50 dark:border-gray-800"
-      >
+      <div class="card-component-container-1">
         <div class="flex items-center gap-3">
-          <span class="material-symbols-outlined text-gray-400">dark_mode</span>
-          <p class="text-[15px] font-medium dark:text-white">Dark Mode</p>
+          <span
+            class="material-symbols-outlined text-text-foreground dark:text-text-foreground-dark"
+            >dark_mode</span
+          >
+          <p
+            class="text-[15px] font-medium text-text-foreground dark:text-text-foreground-dark"
+          >
+            Dark Mode
+          </p>
         </div>
         <label
           class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-gray-200 dark:bg-gray-700 p-0.5 transition-all"
@@ -52,12 +45,17 @@
           ></div>
         </label>
       </div>
-      <div class="flex items-center justify-between p-3">
+      <div class="card-component-container-1">
         <div class="flex items-center gap-3">
-          <span class="material-symbols-outlined text-gray-400"
+          <span
+            class="material-symbols-outlined text-text-foreground dark:text-text-foreground-dark"
             >density_medium</span
           >
-          <p class="text-[15px] font-medium dark:text-white">Compact Mode</p>
+          <p
+            class="text-[15px] font-medium text-text-foreground dark:text-text-foreground-dark"
+          >
+            Compact Mode
+          </p>
         </div>
         <label
           class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-gray-200 dark:bg-gray-700 p-0.5 transition-all"
@@ -76,17 +74,24 @@
     <h3
       class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider ml-1"
     >
-      Localization
+      Financial & Language
     </h3>
     <div
-      class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800"
+      class="bg-card dark:bg-card-dark rounded-xl overflow-hidden shadow-sm border border-border dark:border-border-dark"
     >
       <div
-        class="flex items-center justify-between p-3 border-b border-gray-50 dark:border-gray-800 active:bg-gray-50 dark:active:bg-gray-800 transition-colors cursor-pointer"
+        class="flex items-center justify-between p-3 border-b border-border dark:border-border-dark active:bg-gray-50 dark:active:bg-gray-800 transition-colors cursor-pointer"
       >
         <div class="flex items-center gap-3">
-          <span class="material-symbols-outlined text-gray-400">payments</span>
-          <p class="text-[15px] font-medium dark:text-white">Base Currency</p>
+          <span
+            class="material-symbols-outlined text-text-foreground dark:text-text-foreground-dark"
+            >payments</span
+          >
+          <p
+            class="text-[15px] font-medium text-text-foreground dark:text-text-foreground-dark"
+          >
+            Base Currency
+          </p>
         </div>
         <div class="flex items-center gap-1">
           <span class="text-sm text-gray-500">USD ($)</span>
@@ -99,8 +104,15 @@
         class="flex items-center justify-between p-3 active:bg-gray-50 dark:active:bg-gray-800 transition-colors cursor-pointer"
       >
         <div class="flex items-center gap-3">
-          <span class="material-symbols-outlined text-gray-400">language</span>
-          <p class="text-[15px] font-medium dark:text-white">Language</p>
+          <span
+            class="material-symbols-outlined text-text-foreground dark:text-text-foreground-dark"
+            >language</span
+          >
+          <p
+            class="text-[15px] font-medium text-text-foreground dark:text-text-foreground-dark"
+          >
+            Language
+          </p>
         </div>
         <div class="flex items-center gap-1">
           <span class="text-sm text-gray-500">English</span>
@@ -116,28 +128,27 @@
     <h3
       class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider ml-1"
     >
-      Integration
+      Model Integration
     </h3>
     <div
-      class="bg-white dark:bg-gray-900 rounded-xl p-3 shadow-sm border border-gray-100 dark:border-gray-800 space-y-4"
+      class="bg-card dark:bg-card-dark rounded-xl p-3 shadow-sm border border-border dark:border-border-dark space-y-4"
     >
       <div class="space-y-2">
         <label
-          for="stripe-key"
-          class="text-[13px] font-medium text-gray-600 dark:text-gray-400"
-          >Stripe API Key</label
+          for="api-key"
+          class="text-[13px] font-medium text-text-foreground dark:text-text-foreground-dark"
+          >Model API Key</label
         >
         <div class="relative">
           <input
-            id="stripe-key"
-            class="w-full bg-gray-50 dark:bg-gray-800 border-none rounded-lg py-3 px-4 text-sm focus:ring-2 focus:ring-primary/50 transition-all dark:text-white"
+            id="api-key"
+            class="text-input-primary"
             placeholder="Enter API Key"
             type="password"
             value=""
-            readonly
           />
           <button
-            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-text-foreground dark:text-text-foreground-dark"
           >
             <span class="material-symbols-outlined text-[20px]">visibility</span
             >
@@ -146,34 +157,26 @@
       </div>
       <div class="space-y-2">
         <label
-          for="paypal-id"
-          class="text-[13px] font-medium text-gray-600 dark:text-gray-400"
-          >PayPal Client ID</label
+          for="url-endpoint"
+          class="text-[13px] font-medium text-text-foreground dark:text-text-foreground-dark"
+          >Url Endpoint</label
         >
         <div class="relative">
           <input
-            id="paypal-id"
-            class="w-full bg-gray-50 dark:bg-gray-800 border-none rounded-lg py-3 px-4 text-sm focus:ring-2 focus:ring-primary/50 transition-all dark:text-white"
-            placeholder="Enter Client ID"
+            id="url-endpoint"
+            class="text-input-primary"
+            placeholder="Enter URL Endpoint Address"
             type="text"
             value=""
-            readonly
           />
         </div>
       </div>
-      <button
-        class="w-full bg-primary text-white font-semibold py-3 rounded-lg text-sm active:scale-[0.98] transition-transform"
-      >
-        Verify Connections
-      </button>
+      <button class="btn-primary"> Verify Connections </button>
     </div>
   </section>
 
   <section class="pt-4">
-    <a
-      href="/"
-      class="w-full flex items-center justify-center gap-2 bg-red-50 dark:bg-red-900/10 text-red-600 dark:text-red-400 font-semibold py-4 rounded-xl text-sm border border-red-100 dark:border-red-900/30"
-    >
+    <a href="/" class="btn-danger">
       <span class="material-symbols-outlined text-[20px]">logout</span>
       Logout Account
     </a>

@@ -7,7 +7,7 @@
 </script>
 
 <header
-  class="sticky top-0 z-30 bg-white/80 dark:bg-background-dark/80 backdrop-blur-lg px-5 py-4 flex items-center justify-between border-b border-slate-100 dark:border-gray-800"
+  class="sticky top-0 z-30 bg-background/80 dark:bg-background-dark/80 backdrop-blur-lg px-5 py-4 flex items-center justify-between border-b border-border dark:border-border-dark"
 >
   <div class="flex items-center gap-3">
     {#if showUser}
@@ -24,27 +24,25 @@
     <div>
       {#if subtitle}
         <p
-          class="text-[10px] text-slate-500 font-medium uppercase tracking-tight"
+          class="text-[10px] text-text dark:text-text-dark font-medium uppercase tracking-tight"
         >
           {subtitle}
         </p>
       {/if}
-      <h1 class="text-sm font-bold dark:text-white">{title || userName}</h1>
+      <h1 class="text-sm font-bold dark:text-text-dark text-text">{title || userName}</h1>
     </div>
   </div>
   <div class="flex items-center gap-2">
     <button
-      class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 dark:bg-gray-800 text-slate-600 dark:text-gray-400"
+      class="w-10 h-10 flex items-center justify-center rounded-full bg-background-light dark:bg-background-dark text-text dark:text-text-dark"
     >
       <span class="material-symbols-outlined text-[22px]">search</span>
     </button>
     <button
-      class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 dark:bg-gray-800 text-slate-600 dark:text-gray-400 relative"
+      class="w-10 h-10 flex items-center justify-center rounded-full bg-background-light dark:bg-background-dark text-text dark:text-text-dark   relative"
     >
       <span class="material-symbols-outlined text-[22px]">notifications</span>
-      <span
-        class="absolute top-2.5 right-2.5 w-2 h-2 bg-primary rounded-full border-2 border-white dark:border-gray-800"
-      ></span>
+
     </button>
   </div>
 </header>

@@ -2,38 +2,6 @@
   import { transactions } from "$lib/data/mock";
 </script>
 
-<header
-  class="sticky top-0 z-40 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-gray-800 px-4 py-3 flex items-center justify-between"
->
-  <div class="flex items-center gap-3">
-    <h1 class="text-xl font-bold tracking-tight dark:text-white">Finance</h1>
-  </div>
-  <div class="flex items-center gap-2">
-    <button
-      class="p-2 text-slate-600 dark:text-gray-400 rounded-full hover:bg-slate-100 dark:hover:bg-gray-800"
-    >
-      <span class="material-symbols-outlined">search</span>
-    </button>
-    <button
-      class="p-2 text-slate-600 dark:text-gray-400 rounded-full hover:bg-slate-100 dark:hover:bg-gray-800 relative"
-    >
-      <span class="material-symbols-outlined">notifications</span>
-      <span
-        class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-gray-800"
-      ></span>
-    </button>
-    <div
-      class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border border-primary/30"
-    >
-      <img
-        alt="avatar"
-        class="w-full h-full object-cover"
-        src="https://picsum.photos/100/100?random=7"
-      />
-    </div>
-  </div>
-</header>
-
 <main class="p-4 flex flex-col gap-6 max-w-4xl mx-auto w-full">
   <div
     class="bg-slate-200/50 dark:bg-gray-800 p-1 rounded-xl flex max-w-sm mx-auto w-full"
@@ -148,9 +116,6 @@
   </section>
 </main>
 
-<a
-  href="/finance/new"
-  class="fixed bottom-28 right-6 w-16 h-16 bg-primary text-white rounded-2xl shadow-2xl shadow-primary/30 flex items-center justify-center active:scale-90 transition-transform z-40"
->
+<a href="/dashboard/finance/new" class="card-button-fixed-bottom-right">
   <span class="material-symbols-outlined text-3xl font-bold">add</span>
 </a>

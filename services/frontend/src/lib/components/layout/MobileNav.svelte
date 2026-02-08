@@ -2,13 +2,10 @@
   import { page } from "$app/stores";
   import { navItems, settingsNavItem } from "$lib/data/navigation";
 
-  $: currentPath = $page.url.pathname;
-
-  function isActive(href: string): boolean {
-    if (href === "/dashboard") {
-      return currentPath === "/dashboard" || currentPath === "/";
-    }
-    return currentPath.startsWith(href);
+  function isActive(url?: string) {
+    if (!url) return false;
+    const current = $page.url.pathname;
+    return current === url || current.startsWith(url + "/dashboard/");
   }
 </script>
 
@@ -19,7 +16,7 @@
     <a
       href={item.href}
       class="flex flex-col items-center gap-1.5 w-1/5 {isActive(item.href)
-        ? 'text-primary'
+        ? 'text-text dark:text-text-dark'
         : 'text-gray-400'}"
     >
       <span
@@ -36,7 +33,7 @@
     class="flex flex-col items-center gap-1.5 w-1/5 {isActive(
       settingsNavItem.href,
     )
-      ? 'text-primary'
+      ? 'text-text dark:text-text-dark'
       : 'text-gray-400'}"
   >
     <span
@@ -47,6 +44,6 @@
     >
       {settingsNavItem.icon}
     </span>
-    <span class="text-[10px] font-medium">{settingsNavItem.label}</span>
+    <span class="text-[10px]">{settingsNavItem.label}</span>
   </a>
 </nav>

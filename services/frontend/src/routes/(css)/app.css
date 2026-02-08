@@ -1,9 +1,35 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-    --color-primary: #3713ec;
-    --color-background-light: #f8fafc;
-    --color-background-dark: #0f172a;
+    --color-text: #262626;
+    --color-text-foreground: #222222;
+    --color-background: #FFF5CD;
+    --color-foreground: oklch(0.1 0.01 240);
+    --color-card: #fffff2;
+    --color-card-foreground: oklch(0.1 0.01 240);
+    --color-border: rgba(37, 52, 63, .2);
+    --color-button-primary: #16423C;
+    --color-button-foreground: #CD1818;
+    --color-text-input: #FAF0E6;
+    --color-text-input-foreground: #222222;
+    --color-hover-overlay: rgba(0, 0, 0, 0.03);
+    /* 
+  Dark theme overrides 
+  */
+    --color-text-dark: #fffff2;
+    --color-text-foreground-dark: #FFF0DD;
+    --color-background-dark: #0C0C0C;
+    --color-foreground-dark: oklch(0.9 0.02 260);
+    --color-card-dark: rgba(16, 24, 40, 1);
+    --color-card-foreground-dark: oklch(0.9 0.02 260);
+    --color-border-dark: rgba(252, 249, 234, .1);
+    --color-button-primary-dark: #0F0E0E;
+    --color-button-foreground-dark: #C40C0C;
+    --color-text-input-dark: #121212;
+    --color-text-input-foreground-dark: #0B192C;
+    --color-hover-overlay-dark: rgba(255, 255, 255, 0.03);
 }
 
 @layer utilities {

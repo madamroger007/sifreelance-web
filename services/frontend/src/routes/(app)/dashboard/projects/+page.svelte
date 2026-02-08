@@ -3,26 +3,6 @@
 </script>
 
 <div class="flex flex-col min-h-full">
-  <header
-    class="sticky top-0 z-40 bg-white/80 dark:bg-background-dark/80 backdrop-blur-lg border-b border-slate-200 dark:border-gray-800 px-6 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
-  >
-    <div>
-      <h1 class="text-2xl font-bold tracking-tight dark:text-white">
-        Projects
-      </h1>
-      <p class="text-sm text-slate-500 dark:text-gray-400">
-        Manage projects and generate smart pricing
-      </p>
-    </div>
-    <a
-      href="/projects/new"
-      class="bg-primary text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 flex items-center justify-center gap-2 active:scale-95 transition-all"
-    >
-      <span class="material-symbols-outlined text-lg">add</span>
-      Create Project
-    </a>
-  </header>
-
   <main class="flex-1 p-6 space-y-6">
     <section class="space-y-6">
       <div class="flex items-center justify-between">
@@ -195,10 +175,7 @@
     </section>
   </main>
 
-  <a
-    href="/projects/new"
-    class="md:hidden fixed bottom-28 right-6 size-14 bg-primary text-white rounded-full shadow-2xl shadow-primary/40 flex items-center justify-center z-50 active:scale-90 transition-transform"
-  >
-    <span class="material-symbols-outlined text-2xl">add</span>
+  <a href="/dashboard/projects/new" class="card-button-fixed-bottom-right">
+    <span class="material-symbols-outlined text-3xl font-bold">add</span>
   </a>
 </div>

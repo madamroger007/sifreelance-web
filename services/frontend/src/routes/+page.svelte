@@ -3,9 +3,8 @@
 </script>
 
 <div
-  class="bg-white dark:bg-background-dark min-h-screen text-slate-900 dark:text-slate-100"
+  class="bg-background min-h-screen text-slate-900 dark:text-slate-100"
 >
-  <!-- Navigation -->
   <nav class="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
     <div class="flex items-center gap-2">
       <span class="material-symbols-outlined text-primary text-3xl font-bold"

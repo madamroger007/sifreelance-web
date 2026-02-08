@@ -2,30 +2,6 @@
   import { scheduleEvents } from "$lib/data/mock";
 </script>
 
-<header
-  class="sticky top-0 z-30 flex items-center justify-between bg-white/80 dark:bg-background-dark/80 backdrop-blur-md p-4 border-b border-gray-200 dark:border-gray-800"
->
-  <div class="flex items-center gap-3">
-    <h1 class="text-xl font-bold tracking-tight dark:text-white">Schedule</h1>
-  </div>
-  <div class="flex items-center gap-2">
-    <button
-      class="flex size-10 items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-white/10"
-    >
-      <span class="material-symbols-outlined">search</span>
-    </button>
-    <div
-      class="size-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden ml-2"
-    >
-      <img
-        alt="avatar"
-        class="size-full object-cover"
-        src="https://picsum.photos/100/100?random=8"
-      />
-    </div>
-  </div>
-</header>
-
 <div class="p-4 max-w-6xl mx-auto w-full space-y-6">
   <div class="flex items-center justify-between gap-4">
     <div class="hidden sm:block">

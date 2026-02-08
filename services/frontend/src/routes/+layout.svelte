@@ -1,20 +1,14 @@
 <script lang="ts">
-  import "../app.css";
-  import { browser } from "$app/environment";
+  import "./(css)/components.css";
   import { isDarkMode } from "$lib/stores";
+  import { onMount } from "svelte";
 
   let { children } = $props();
 
-  // Apply dark mode on initial load
-  $effect(() => {
-    if (browser) {
-      if ($isDarkMode) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    }
+  onMount(() => {
+    isDarkMode.init();
   });
+
 </script>
 
 <svelte:head>
@@ -23,5 +17,6 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
   />
 </svelte:head>
+
 
 {@render children()}
