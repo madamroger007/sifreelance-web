@@ -11,7 +11,7 @@
       <p class="text-lg font-black dark:text-white">Your Weekly Agenda</p>
     </div>
     <a
-      href="/schedule/new"
+      href="/dashboard/schedule/new"
       class="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-primary text-text dark:text-text-dark px-8 py-4 rounded-2xl font-black hover:scale-105 transition-all shadow-xl shadow-primary/20 border border-border dark:border-border-dark"
     >
       <span class="material-symbols-outlined">add</span>
@@ -49,7 +49,7 @@
           {/each}
           {#each Array.from({ length: 31 }) as _, i}
             <a
-              href="/schedule/new"
+              href="/dashboard/schedule/new"
               class="aspect-square flex items-center justify-center text-sm font-bold rounded-2xl cursor-pointer transition-all  {i +
                 1 ===
               12
@@ -74,7 +74,7 @@
       <div class="space-y-4">
         {#each scheduleEvents as event}
           <a
-            href="/schedule/new"
+            href="/dashboard/schedule/new"
             class="bg-card dark:bg-card-dark p-6 rounded-3xl border border-border dark:border-border-dark flex gap-6 hover:shadow-lg transition-all cursor-pointer group"
           >
             <div class="flex flex-col items-center gap-2 min-w-[60px]">

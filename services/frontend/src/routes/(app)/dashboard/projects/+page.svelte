@@ -2,6 +2,7 @@
   import CardViewMobile from "$lib/components/card/card-view-mobile.svelte";
   import TableProject from "$lib/components/table/table-project.svelte";
   import { projects } from "$lib/data/mock";
+  import AddButton from "$lib/components/button/add.svelte";
 </script>
 
 <div class="flex flex-col">
@@ -31,8 +32,5 @@
 
     <CardViewMobile {projects} />
   </main>
-
-  <a href="/dashboard/projects/new" class="card-button-fixed-bottom-right">
-    <span class="material-symbols-outlined text-3xl font-bold">add</span>
-  </a>
+  <AddButton href="/dashboard/projects/new" />
 </div>

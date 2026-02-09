@@ -1,5 +1,6 @@
 @import 'tailwindcss';
-html{
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -8,9 +9,9 @@ html{
 @theme {
     --color-text: #262626;
     --color-text-foreground: #222222;
-    --color-background: #FFF5CD;
+    --color-background: #fffff2;
     --color-foreground: oklch(0.1 0.01 240);
-    --color-card: #fffff2;
+    --color-card: #FFFFFF;
     --color-card-foreground: oklch(0.1 0.01 240);
     --color-border: rgba(37, 52, 63, .2);
     --color-button-primary: #16423C;

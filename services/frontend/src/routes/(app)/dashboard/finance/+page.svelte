@@ -80,7 +80,7 @@
     <div class="space-y-3">
       {#each transactions as transaction}
         <a
-          href="/finance/new"
+          href="/dashboard/finance/new"
           class="bg-white dark:bg-gray-900 p-5 rounded-2xl flex items-center justify-between border border-slate-50 dark:border-gray-800 shadow-sm hover:scale-[1.01] transition-transform cursor-pointer"
         >
           <div class="flex items-center gap-4">
