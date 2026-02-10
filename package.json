@@ -1,0 +1,41 @@
+{
+  "name": "sveltekit-app",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "prisma generate && vite build",
+    "preview": "vite preview",
+    "prepare": "svelte-kit sync || echo ''",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:migrate:prod": "prisma migrate deploy",
+    "db:studio": "prisma studio",
+    "db:seed": "prisma db seed",
+    "postinstall": "prisma generate"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^7.0.0",
+    "@sveltejs/kit": "^2.50.2",
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "@types/amqplib": "^0.10.8",
+    "dotenv": "^17.2.4",
+    "prisma": "^6.8.0",
+    "rollup": "^4.40.0",
+    "svelte": "^5.49.2",
+    "svelte-check": "^4.3.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.8.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "amqplib": "^0.10.9",
+    "ioredis": "^5.9.2",
+    "tailwindcss": "^4.1.18"
+  }
+}

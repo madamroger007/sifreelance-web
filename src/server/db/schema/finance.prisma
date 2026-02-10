@@ -1,0 +1,26 @@
+// Finance Schema
+
+model Finance {
+    id          String      @id @default(cuid())
+    type        FinanceType
+    amount      Decimal     @db.Decimal(12, 2)
+    description String?
+    date        DateTime    @default(now())
+    category    String?
+    createdAt   DateTime    @default(now())
+    updatedAt   DateTime    @updatedAt
+
+    // Relations
+    userId    String
+    user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    projectId String?
+    project   Project? @relation(fields: [projectId], references: [id], onDelete: SetNull)
+
+    @@index([userId])
+    @@index([projectId])
+}
+
+enum FinanceType {
+    INCOME
+    EXPENSE
+}
