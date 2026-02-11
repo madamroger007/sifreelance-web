@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { landingFeatures, landingSteps } from "$lib/data/mock";
+  import { landingFeatures, landingSteps } from "$lib/frontend/data/mock";
 </script>
 
 <div

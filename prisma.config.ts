@@ -7,5 +7,5 @@ const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.en
 config({ path: envFile });
 
 export default defineConfig({
-    schema: path.join('src', 'server', 'db', 'schema'),
+    schema: path.join('src', 'lib', 'server', 'db', 'schema'),
 });

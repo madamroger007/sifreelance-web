@@ -1,6 +1,6 @@
 <script lang="ts">
   import "./(css)/components.css";
-  import { isDarkMode } from "$lib/stores";
+  import { isDarkMode } from "$lib/frontend/stores";
   import { onMount } from "svelte";
 
   let { children } = $props();

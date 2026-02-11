@@ -1,10 +1,24 @@
 <script lang="ts">
-  import { goto } from "$app/navigation";
-  import { auth, mockUser } from "$lib/stores";
+  import { signIn } from "@auth/sveltekit/client";
+  import AuthProviderButton from "$lib/frontend/components/button/auth-provider.svelte";
+  let email = "";
+  let password = "";
+  let errorMessage = "";
 
-  function handleLogin() {
-    auth.login(mockUser);
-    goto("/dashboard");
+  async function handleLogin() {
+    const result = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+
+    if (result?.error) {
+      errorMessage = "Invalid email or password";
+      return;
+    }
+
+    // redirect manual
+    window.location.href = "/dashboard";
   }
 </script>
 
@@ -35,10 +49,11 @@
         >Email Address</label
       >
       <input
+        bind:value={email}
         id="email"
         type="email"
         placeholder="name@company.com"
-        class="w-full px-4 py-3.5 rounded-xl bg-text-input dark:bg-text-input-dark focus:ring-primary focus:border-primary transition-all text-text dark:text-text-dark" 
+        class="w-full px-4 py-3.5 rounded-xl bg-text-input dark:bg-text-input-dark focus:ring-primary focus:border-primary transition-all text-text dark:text-text-dark"
       />
     </div>
     <div class="space-y-1.5">
@@ -55,6 +70,7 @@
         >
       </div>
       <input
+        bind:value={password}
         id="password"
         type="password"
         placeholder="••••••••"
@@ -78,28 +94,7 @@
     <div class="flex-grow border-t border-border dark:border-border-dark"></div>
   </div>
 
-  <div class="grid grid-cols-2 gap-4">
-    <button
-      class="flex items-center justify-center gap-2 py-3 rounded-xl border border-border dark:border-border-dark hover:bg-slate-50 dark:hover:bg-white/5 transition-all"
-    >
-      <img
-        src="https://www.google.com/favicon.ico"
-        alt="google"
-        class="size-4"
-      />
-      <span class="text-sm font-bold dark:text-gray-300">Google</span>
-    </button>
-    <button
-      class="flex items-center justify-center gap-2 py-3 rounded-xl border border-border dark:border-border-dark hover:bg-slate-50 dark:hover:bg-white/5 transition-all"
-    >
-      <img
-        src="https://github.com/favicon.ico"
-        alt="github"
-        class="size-4 dark:invert"
-      />
-      <span class="text-sm font-bold dark:text-gray-300">GitHub</span>
-    </button>
-  </div>
+  <AuthProviderButton />
 
   <p class="text-center text-sm font-medium text-text dark:text-text-dark">
     Don't have an account?
