@@ -125,57 +125,6 @@
     </div>
   </section>
 
-  <section class="space-y-3">
-    <h3
-      class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider ml-1"
-    >
-      Model Integration
-    </h3>
-    <div
-      class="bg-card dark:bg-card-dark rounded-xl p-3 shadow-sm border border-border dark:border-border-dark space-y-4"
-    >
-      <div class="space-y-2">
-        <label
-          for="api-key"
-          class="text-[13px] font-medium text-text-foreground dark:text-text-foreground-dark"
-          >Model API Key</label
-        >
-        <div class="relative">
-          <input
-            id="api-key"
-            class="text-input-primary"
-            placeholder="Enter API Key"
-            type="password"
-            value=""
-          />
-          <button
-            class="absolute right-3 top-1/2 -translate-y-1/2 text-text-foreground dark:text-text-foreground-dark"
-          >
-            <span class="material-symbols-outlined text-[20px]">visibility</span
-            >
-          </button>
-        </div>
-      </div>
-      <div class="space-y-2">
-        <label
-          for="url-endpoint"
-          class="text-[13px] font-medium text-text-foreground dark:text-text-foreground-dark"
-          >Url Endpoint</label
-        >
-        <div class="relative">
-          <input
-            id="url-endpoint"
-            class="text-input-primary"
-            placeholder="Enter URL Endpoint Address"
-            type="text"
-            value=""
-          />
-        </div>
-      </div>
-      <button class="btn-primary"> Verify Connections </button>
-    </div>
-  </section>
-
   <section class="pt-4">
     <div class="btn-danger">
       <Buttonlogout

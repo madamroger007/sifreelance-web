@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '../../../../prisma/generated/prisma/client';
 import { config } from 'dotenv';
 import { env } from '$env/dynamic/private';
 

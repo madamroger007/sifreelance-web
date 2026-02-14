@@ -1,7 +1,4 @@
-// User & Session types from Prisma schema
-import type { User, Session } from '@prisma/client';
-
-export type { User, Session };
+import type { Project, Schedule, Session, User } from "../../../../prisma/generated/prisma/client";
 
 // User creation input (without auto-generated fields)
 export interface CreateUserInput {
@@ -30,10 +27,6 @@ export interface CreateSessionInput {
 // User with relations (use Prisma's generated types for full relations)
 export type UserWithRelations = User & {
     projects?: Project[];
-    finances?: Finance[];
     schedules?: Schedule[];
     sessions?: Session[];
 };
-
-// Import Prisma types for relations
-import type { Project, Finance, Schedule } from '@prisma/client';

@@ -1,22 +1,18 @@
-// Project types from Prisma schema
-import type { Project } from '@prisma/client';
-
-export type { Project };
-
-// Re-export enums
-export { ProjectStatus, Priority } from '@prisma/client';
+import type { Project, Schedule, User } from "../../../../prisma/generated/prisma/client";
 
 // Project creation input (without auto-generated fields)
 export interface CreateProjectInput {
     title: string;
     description?: string;
     status?: 'PENDING' | 'IN_PROGRESS' | 'COMPLETED' | 'CANCELLED' | 'ON_HOLD';
-    priority?: 'LOW' | 'MEDIUM' | 'HIGH' | 'URGENT';
+    complexity?: 'LOW' | 'MEDIUM' | 'HIGH' | 'URGENT';
     budget?: number;
-    deadline?: Date;
+    deadline: string;
     clientName?: string;
     clientEmail?: string;
     userId: string;
+    tipe: string;
+    price?: number;
 }
 
 // Project update input
@@ -24,9 +20,9 @@ export interface UpdateProjectInput {
     title?: string;
     description?: string;
     status?: 'PENDING' | 'IN_PROGRESS' | 'COMPLETED' | 'CANCELLED' | 'ON_HOLD';
-    priority?: 'LOW' | 'MEDIUM' | 'HIGH' | 'URGENT';
+    complexity?: 'LOW' | 'MEDIUM' | 'HIGH' | 'URGENT';
     budget?: number;
-    deadline?: Date;
+    deadline?: string;
     clientName?: string;
     clientEmail?: string;
 }
@@ -34,12 +30,9 @@ export interface UpdateProjectInput {
 // Project with relations (use Prisma's generated types for full relations)
 export type ProjectWithRelations = Project & {
     user?: User;
-    finances?: Finance[];
     schedules?: Schedule[];
 };
 
-// Import Prisma types for relations
-import type { User, Finance, Schedule } from '@prisma/client';
 
 // Project status labels for UI
 export const PROJECT_STATUS_LABELS: Record<string, string> = {
@@ -50,8 +43,8 @@ export const PROJECT_STATUS_LABELS: Record<string, string> = {
     ON_HOLD: 'On Hold',
 };
 
-// Priority labels for UI
-export const PRIORITY_LABELS: Record<string, string> = {
+// Complexity labels for UI
+export const COMPLEXITY_LABELS: Record<string, string> = {
     LOW: 'Low',
     MEDIUM: 'Medium',
     HIGH: 'High',

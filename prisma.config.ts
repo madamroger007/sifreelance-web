@@ -1,11 +1,7 @@
-import path from 'node:path';
-import { defineConfig } from 'prisma/config';
-import { config } from 'dotenv';
-
-// Load environment variables based on NODE_ENV
-const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development';
-config({ path: envFile });
+import "dotenv/config";
+import path from "node:path";
+import { defineConfig } from "prisma/config";
 
 export default defineConfig({
-    schema: path.join('src', 'lib', 'server', 'db', 'schema'),
+  schema: path.join("prisma", "schema"),
 });

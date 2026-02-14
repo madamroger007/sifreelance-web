@@ -1,7 +1,5 @@
-// Schedule types from Prisma schema
-import type { Schedule } from '@prisma/client';
+import type { Project, Schedule, User } from "../../../../prisma/generated/prisma/client";
 
-export type { Schedule };
 
 // Schedule creation input (without auto-generated fields)
 export interface CreateScheduleInput {
@@ -29,9 +27,6 @@ export type ScheduleWithRelations = Schedule & {
     user?: User;
     project?: Project | null;
 };
-
-// Import Prisma types for relations
-import type { User, Project } from '@prisma/client';
 
 // Calendar event format (for UI components)
 export interface CalendarEvent {

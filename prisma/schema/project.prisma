@@ -1,0 +1,39 @@
+// Project Schema
+
+model Project {
+    id           String        @id @default(cuid())
+    title        String
+    description  String?
+    status       ProjectStatus @default(PENDING)
+    complexity   Complexity    @default(MEDIUM)
+    budget       Float?
+    deadline     String
+    clientName   String?
+    clientEmail  String?
+    tipe         String
+    price        Float?
+    createdAt    DateTime      @default(now())
+    updatedAt    DateTime      @updatedAt
+
+    // Relations
+    userId    String
+    user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+    schedules Schedule[]
+
+    @@index([userId])
+}
+
+enum ProjectStatus {
+    PENDING
+    IN_PROGRESS
+    COMPLETED
+    CANCELLED
+    ON_HOLD
+}
+
+enum Complexity {
+    LOW
+    MEDIUM
+    HIGH
+    URGENT
+}

@@ -1,0 +1,21 @@
+// Schedule Schema
+
+model Schedule {
+    id          String    @id @default(cuid())
+    title       String
+    description String?
+    startDate   DateTime
+    endDate     DateTime?
+    allDay      Boolean   @default(false)
+    createdAt   DateTime  @default(now())
+    updatedAt   DateTime  @updatedAt
+
+    // Relations
+    userId    String
+    user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    projectId String?
+    project   Project? @relation(fields: [projectId], references: [id], onDelete: SetNull)
+
+    @@index([userId])
+    @@index([projectId])
+}
