@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^7.0.0",
-    "@sveltejs/kit": "^2.50.2",
+    "@sveltejs/kit": "^2.52.2",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
     "@types/amqplib": "^0.10.8",
     "@types/bcrypt": "^6.0.0",
