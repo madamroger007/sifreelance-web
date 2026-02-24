@@ -11,7 +11,7 @@ export interface CreateProjectInput {
     clientName?: string;
     clientEmail?: string;
     userId: string;
-    tipe: string;
+    type: string;
     price?: number;
 }
 
@@ -25,6 +25,8 @@ export interface UpdateProjectInput {
     deadline?: string;
     clientName?: string;
     clientEmail?: string;
+    type?: string;
+    price?: number;
 }
 
 // Project with relations (use Prisma's generated types for full relations)

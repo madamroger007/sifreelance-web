@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Project } from "$lib/types";
+  import type { Project } from "$lib/shared/types/types";
 
   export let projects: Project[];
 </script>
@@ -25,7 +25,7 @@
         >
         <th
           class="px-4 py-3 text-[11px] font-bold text-gray-600 dark:text-slate-400 uppercase tracking-wider"
-          >Scope</th
+          >Complexity</th
         >
         <th
           class="px-4 py-3 text-[11px] font-bold text-gray-600 dark:text-slate-400 uppercase tracking-wider"
@@ -44,10 +44,10 @@
     <tbody class="divide-y divide-slate-50 dark:divide-gray-800">
       {#each projects as proj}
         <tr
-          class="hover:bg-slate-50 dark:hover:bg-gray-800/30 transition-colors cursor-pointer group"
+          class="hover:bg-slate-50 dark:hover:bg-gray-800/30 transition-colors group"
         >
           <td class="px-4 py-4">
-            <a href="/projects/new" class="flex items-center gap-3">
+            <div class="flex items-center gap-3">
               <div
                 class="size-8 rounded bg-indigo-50 dark:bg-indigo-500/30 flex items-center justify-center text-text dark:text-text-dark"
               >
@@ -55,19 +55,19 @@
                   >deployed_code</span
                 >
               </div>
-              <span class="text-sm font-bold dark:text-white">{proj.name}</span>
-            </a>
+              <span class="text-sm font-bold dark:text-white">{proj.title}</span>
+            </div>
           </td>
           <td class="px-4 py-4 text-sm text-slate-600 dark:text-gray-300"
-            >{proj.client}</td
+            >{proj.clientName}</td
           >
           <td class="px-4 py-4 text-xs font-medium dark:text-gray-300"
             >{proj.type}</td
           >
           <td class="px-4 py-4 text-xs text-slate-600 dark:text-gray-300"
-            >{proj.scope}</td
+            >{proj.complexity}</td
           >
-          <td class="px-4 py-4 font-bold text-primary text-sm text-slate-600 dark:text-gray-300">{proj.price}</td>
+          <td class="px-4 py-4 font-bold text-primary text-sm text-slate-600 dark:text-gray-300">{proj.currency} {proj.price}</td>
           <td class="px-4 py-4">
             <span
               class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider {proj.status ===
@@ -82,7 +82,7 @@
           </td>
           <td class="px-4 py-4">
             <a
-              href="/projects/new"
+              href="/dashboard/projects/form?id={proj.id}"
               class="p-1.5 hover:bg-white dark:hover:bg-gray-700 rounded text-slate-400 hover:text-primary transition-all"
             >
               <span class="material-symbols-outlined text-sm">edit</span>

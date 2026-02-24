@@ -1,8 +1,10 @@
 <script lang="ts">
   import CardViewMobile from "$lib/frontend/components/card/card-view-mobile.svelte";
   import TableProject from "$lib/frontend/components/table/table-project.svelte";
-  import { projects } from "$lib/frontend/data/mock";
   import AddButton from "$lib/frontend/components/button/add.svelte";
+  import type { Project } from "$lib/shared/types/types";
+
+  export let data: { projects: Project[] };
 </script>
 
 <div class="flex flex-col">
@@ -27,10 +29,10 @@
           </button>
         </div>
       </div>
-      <TableProject {projects} />
+      <TableProject projects={data.projects} />
     </section>
 
-    <CardViewMobile {projects} />
+    <CardViewMobile projects={data.projects} />
   </main>
-  <AddButton href="/dashboard/projects/new" />
+  <AddButton href="/dashboard/projects/form" />
 </div>

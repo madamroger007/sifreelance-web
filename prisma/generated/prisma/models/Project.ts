@@ -46,8 +46,9 @@ export type ProjectMinAggregateOutputType = {
   deadline: string | null
   clientName: string | null
   clientEmail: string | null
-  tipe: string | null
+  type: string | null
   price: number | null
+  currency: string | null
   createdAt: Date | null
   updatedAt: Date | null
   userId: string | null
@@ -63,8 +64,9 @@ export type ProjectMaxAggregateOutputType = {
   deadline: string | null
   clientName: string | null
   clientEmail: string | null
-  tipe: string | null
+  type: string | null
   price: number | null
+  currency: string | null
   createdAt: Date | null
   updatedAt: Date | null
   userId: string | null
@@ -80,8 +82,9 @@ export type ProjectCountAggregateOutputType = {
   deadline: number
   clientName: number
   clientEmail: number
-  tipe: number
+  type: number
   price: number
+  currency: number
   createdAt: number
   updatedAt: number
   userId: number
@@ -109,8 +112,9 @@ export type ProjectMinAggregateInputType = {
   deadline?: true
   clientName?: true
   clientEmail?: true
-  tipe?: true
+  type?: true
   price?: true
+  currency?: true
   createdAt?: true
   updatedAt?: true
   userId?: true
@@ -126,8 +130,9 @@ export type ProjectMaxAggregateInputType = {
   deadline?: true
   clientName?: true
   clientEmail?: true
-  tipe?: true
+  type?: true
   price?: true
+  currency?: true
   createdAt?: true
   updatedAt?: true
   userId?: true
@@ -143,8 +148,9 @@ export type ProjectCountAggregateInputType = {
   deadline?: true
   clientName?: true
   clientEmail?: true
-  tipe?: true
+  type?: true
   price?: true
+  currency?: true
   createdAt?: true
   updatedAt?: true
   userId?: true
@@ -247,8 +253,9 @@ export type ProjectGroupByOutputType = {
   deadline: string
   clientName: string | null
   clientEmail: string | null
-  tipe: string
+  type: string
   price: number | null
+  currency: string
   createdAt: Date
   updatedAt: Date
   userId: string
@@ -287,8 +294,9 @@ export type ProjectWhereInput = {
   deadline?: Prisma.StringFilter<"Project"> | string
   clientName?: Prisma.StringNullableFilter<"Project"> | string | null
   clientEmail?: Prisma.StringNullableFilter<"Project"> | string | null
-  tipe?: Prisma.StringFilter<"Project"> | string
+  type?: Prisma.StringFilter<"Project"> | string
   price?: Prisma.FloatNullableFilter<"Project"> | number | null
+  currency?: Prisma.StringFilter<"Project"> | string
   createdAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   userId?: Prisma.StringFilter<"Project"> | string
@@ -306,8 +314,9 @@ export type ProjectOrderByWithRelationInput = {
   deadline?: Prisma.SortOrder
   clientName?: Prisma.SortOrderInput | Prisma.SortOrder
   clientEmail?: Prisma.SortOrderInput | Prisma.SortOrder
-  tipe?: Prisma.SortOrder
+  type?: Prisma.SortOrder
   price?: Prisma.SortOrderInput | Prisma.SortOrder
+  currency?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   userId?: Prisma.SortOrder
@@ -328,8 +337,9 @@ export type ProjectWhereUniqueInput = Prisma.AtLeast<{
   deadline?: Prisma.StringFilter<"Project"> | string
   clientName?: Prisma.StringNullableFilter<"Project"> | string | null
   clientEmail?: Prisma.StringNullableFilter<"Project"> | string | null
-  tipe?: Prisma.StringFilter<"Project"> | string
+  type?: Prisma.StringFilter<"Project"> | string
   price?: Prisma.FloatNullableFilter<"Project"> | number | null
+  currency?: Prisma.StringFilter<"Project"> | string
   createdAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   userId?: Prisma.StringFilter<"Project"> | string
@@ -347,8 +357,9 @@ export type ProjectOrderByWithAggregationInput = {
   deadline?: Prisma.SortOrder
   clientName?: Prisma.SortOrderInput | Prisma.SortOrder
   clientEmail?: Prisma.SortOrderInput | Prisma.SortOrder
-  tipe?: Prisma.SortOrder
+  type?: Prisma.SortOrder
   price?: Prisma.SortOrderInput | Prisma.SortOrder
+  currency?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   userId?: Prisma.SortOrder
@@ -372,8 +383,9 @@ export type ProjectScalarWhereWithAggregatesInput = {
   deadline?: Prisma.StringWithAggregatesFilter<"Project"> | string
   clientName?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
   clientEmail?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
-  tipe?: Prisma.StringWithAggregatesFilter<"Project"> | string
+  type?: Prisma.StringWithAggregatesFilter<"Project"> | string
   price?: Prisma.FloatNullableWithAggregatesFilter<"Project"> | number | null
+  currency?: Prisma.StringWithAggregatesFilter<"Project"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Project"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Project"> | Date | string
   userId?: Prisma.StringWithAggregatesFilter<"Project"> | string
@@ -389,8 +401,9 @@ export type ProjectCreateInput = {
   deadline: string
   clientName?: string | null
   clientEmail?: string | null
-  tipe: string
+  type: string
   price?: number | null
+  currency?: string
   createdAt?: Date | string
   updatedAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutProjectsInput
@@ -407,8 +420,9 @@ export type ProjectUncheckedCreateInput = {
   deadline: string
   clientName?: string | null
   clientEmail?: string | null
-  tipe: string
+  type: string
   price?: number | null
+  currency?: string
   createdAt?: Date | string
   updatedAt?: Date | string
   userId: string
@@ -425,8 +439,9 @@ export type ProjectUpdateInput = {
   deadline?: Prisma.StringFieldUpdateOperationsInput | string
   clientName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   clientEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  tipe?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutProjectsNestedInput
@@ -443,8 +458,9 @@ export type ProjectUncheckedUpdateInput = {
   deadline?: Prisma.StringFieldUpdateOperationsInput | string
   clientName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   clientEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  tipe?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   userId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -461,8 +477,9 @@ export type ProjectCreateManyInput = {
   deadline: string
   clientName?: string | null
   clientEmail?: string | null
-  tipe: string
+  type: string
   price?: number | null
+  currency?: string
   createdAt?: Date | string
   updatedAt?: Date | string
   userId: string
@@ -478,8 +495,9 @@ export type ProjectUpdateManyMutationInput = {
   deadline?: Prisma.StringFieldUpdateOperationsInput | string
   clientName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   clientEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  tipe?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -494,8 +512,9 @@ export type ProjectUncheckedUpdateManyInput = {
   deadline?: Prisma.StringFieldUpdateOperationsInput | string
   clientName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   clientEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  tipe?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   userId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -511,8 +530,9 @@ export type ProjectCountOrderByAggregateInput = {
   deadline?: Prisma.SortOrder
   clientName?: Prisma.SortOrder
   clientEmail?: Prisma.SortOrder
-  tipe?: Prisma.SortOrder
+  type?: Prisma.SortOrder
   price?: Prisma.SortOrder
+  currency?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   userId?: Prisma.SortOrder
@@ -533,8 +553,9 @@ export type ProjectMaxOrderByAggregateInput = {
   deadline?: Prisma.SortOrder
   clientName?: Prisma.SortOrder
   clientEmail?: Prisma.SortOrder
-  tipe?: Prisma.SortOrder
+  type?: Prisma.SortOrder
   price?: Prisma.SortOrder
+  currency?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   userId?: Prisma.SortOrder
@@ -550,8 +571,9 @@ export type ProjectMinOrderByAggregateInput = {
   deadline?: Prisma.SortOrder
   clientName?: Prisma.SortOrder
   clientEmail?: Prisma.SortOrder
-  tipe?: Prisma.SortOrder
+  type?: Prisma.SortOrder
   price?: Prisma.SortOrder
+  currency?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   userId?: Prisma.SortOrder
@@ -673,8 +695,9 @@ export type ProjectCreateWithoutSchedulesInput = {
   deadline: string
   clientName?: string | null
   clientEmail?: string | null
-  tipe: string
+  type: string
   price?: number | null
+  currency?: string
   createdAt?: Date | string
   updatedAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutProjectsInput
@@ -690,8 +713,9 @@ export type ProjectUncheckedCreateWithoutSchedulesInput = {
   deadline: string
   clientName?: string | null
   clientEmail?: string | null
-  tipe: string
+  type: string
   price?: number | null
+  currency?: string
   createdAt?: Date | string
   updatedAt?: Date | string
   userId: string
@@ -723,8 +747,9 @@ export type ProjectUpdateWithoutSchedulesInput = {
   deadline?: Prisma.StringFieldUpdateOperationsInput | string
   clientName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   clientEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  tipe?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutProjectsNestedInput
@@ -740,8 +765,9 @@ export type ProjectUncheckedUpdateWithoutSchedulesInput = {
   deadline?: Prisma.StringFieldUpdateOperationsInput | string
   clientName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   clientEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  tipe?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   userId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -757,8 +783,9 @@ export type ProjectCreateWithoutUserInput = {
   deadline: string
   clientName?: string | null
   clientEmail?: string | null
-  tipe: string
+  type: string
   price?: number | null
+  currency?: string
   createdAt?: Date | string
   updatedAt?: Date | string
   schedules?: Prisma.ScheduleCreateNestedManyWithoutProjectInput
@@ -774,8 +801,9 @@ export type ProjectUncheckedCreateWithoutUserInput = {
   deadline: string
   clientName?: string | null
   clientEmail?: string | null
-  tipe: string
+  type: string
   price?: number | null
+  currency?: string
   createdAt?: Date | string
   updatedAt?: Date | string
   schedules?: Prisma.ScheduleUncheckedCreateNestedManyWithoutProjectInput
@@ -820,8 +848,9 @@ export type ProjectScalarWhereInput = {
   deadline?: Prisma.StringFilter<"Project"> | string
   clientName?: Prisma.StringNullableFilter<"Project"> | string | null
   clientEmail?: Prisma.StringNullableFilter<"Project"> | string | null
-  tipe?: Prisma.StringFilter<"Project"> | string
+  type?: Prisma.StringFilter<"Project"> | string
   price?: Prisma.FloatNullableFilter<"Project"> | number | null
+  currency?: Prisma.StringFilter<"Project"> | string
   createdAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   userId?: Prisma.StringFilter<"Project"> | string
@@ -837,8 +866,9 @@ export type ProjectCreateManyUserInput = {
   deadline: string
   clientName?: string | null
   clientEmail?: string | null
-  tipe: string
+  type: string
   price?: number | null
+  currency?: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -853,8 +883,9 @@ export type ProjectUpdateWithoutUserInput = {
   deadline?: Prisma.StringFieldUpdateOperationsInput | string
   clientName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   clientEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  tipe?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   schedules?: Prisma.ScheduleUpdateManyWithoutProjectNestedInput
@@ -870,8 +901,9 @@ export type ProjectUncheckedUpdateWithoutUserInput = {
   deadline?: Prisma.StringFieldUpdateOperationsInput | string
   clientName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   clientEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  tipe?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   schedules?: Prisma.ScheduleUncheckedUpdateManyWithoutProjectNestedInput
@@ -887,8 +919,9 @@ export type ProjectUncheckedUpdateManyWithoutUserInput = {
   deadline?: Prisma.StringFieldUpdateOperationsInput | string
   clientName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   clientEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  tipe?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -934,8 +967,9 @@ export type ProjectSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   deadline?: boolean
   clientName?: boolean
   clientEmail?: boolean
-  tipe?: boolean
+  type?: boolean
   price?: boolean
+  currency?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   userId?: boolean
@@ -954,8 +988,9 @@ export type ProjectSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   deadline?: boolean
   clientName?: boolean
   clientEmail?: boolean
-  tipe?: boolean
+  type?: boolean
   price?: boolean
+  currency?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   userId?: boolean
@@ -972,8 +1007,9 @@ export type ProjectSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   deadline?: boolean
   clientName?: boolean
   clientEmail?: boolean
-  tipe?: boolean
+  type?: boolean
   price?: boolean
+  currency?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   userId?: boolean
@@ -990,14 +1026,15 @@ export type ProjectSelectScalar = {
   deadline?: boolean
   clientName?: boolean
   clientEmail?: boolean
-  tipe?: boolean
+  type?: boolean
   price?: boolean
+  currency?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   userId?: boolean
 }
 
-export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "description" | "status" | "complexity" | "budget" | "deadline" | "clientName" | "clientEmail" | "tipe" | "price" | "createdAt" | "updatedAt" | "userId", ExtArgs["result"]["project"]>
+export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "description" | "status" | "complexity" | "budget" | "deadline" | "clientName" | "clientEmail" | "type" | "price" | "currency" | "createdAt" | "updatedAt" | "userId", ExtArgs["result"]["project"]>
 export type ProjectInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   schedules?: boolean | Prisma.Project$schedulesArgs<ExtArgs>
@@ -1026,8 +1063,9 @@ export type $ProjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     deadline: string
     clientName: string | null
     clientEmail: string | null
-    tipe: string
+    type: string
     price: number | null
+    currency: string
     createdAt: Date
     updatedAt: Date
     userId: string
@@ -1465,8 +1503,9 @@ export interface ProjectFieldRefs {
   readonly deadline: Prisma.FieldRef<"Project", 'String'>
   readonly clientName: Prisma.FieldRef<"Project", 'String'>
   readonly clientEmail: Prisma.FieldRef<"Project", 'String'>
-  readonly tipe: Prisma.FieldRef<"Project", 'String'>
+  readonly type: Prisma.FieldRef<"Project", 'String'>
   readonly price: Prisma.FieldRef<"Project", 'Float'>
+  readonly currency: Prisma.FieldRef<"Project", 'String'>
   readonly createdAt: Prisma.FieldRef<"Project", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Project", 'DateTime'>
   readonly userId: Prisma.FieldRef<"Project", 'String'>

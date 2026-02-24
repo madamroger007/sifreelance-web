@@ -1,5 +1,6 @@
 <script lang="ts">
-  import type { Project } from "$lib/types";
+  import type { Project } from "$lib/shared/types/types";
+
 
   export let projects: Project[];
 </script>
@@ -13,9 +14,9 @@
       <div class="flex justify-between items-start mb-3">
         <div>
           <h3 class="font-bold text-slate-900 dark:text-white">
-            {proj.name}
+            {proj.title}
           </h3>
-          <p class="text-xs text-slate-500">{proj.client}</p>
+          <p class="text-xs text-slate-500">{proj.clientName}</p>
         </div>
         <span
           class="px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider {proj.status ===
@@ -35,7 +36,7 @@
               >Scope</span
             >
             <span class="text-xs dark:text-gray-300 font-medium"
-              >{proj.scope}</span
+              >{proj.description}</span
             >
           </div>
           <div class="flex flex-col">

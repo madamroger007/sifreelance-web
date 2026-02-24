@@ -9,11 +9,7 @@ export const load: PageServerLoad = async ({ locals }) => {
             projects: [],
         };
     }
-    const result = (await getProjectsByUserIdService(session.user.id)).map(project => ({
-        ...project,
-        budget: project.budget ? Number(project.budget) : null,
-        price: project.price ? Number(project.price) : null,
-    }));
+    const result = await getProjectsByUserIdService(session.user.id);
     return {
         title: "Projects",
         projects: result,

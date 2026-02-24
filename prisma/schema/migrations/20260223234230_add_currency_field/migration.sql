@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Project" ADD COLUMN     "currency" TEXT NOT NULL DEFAULT 'USD';

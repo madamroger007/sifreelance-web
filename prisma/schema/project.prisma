@@ -1,19 +1,20 @@
 // Project Schema
 
 model Project {
-    id           String        @id @default(cuid())
-    title        String
-    description  String?
-    status       ProjectStatus @default(PENDING)
-    complexity   Complexity    @default(MEDIUM)
-    budget       Float?
-    deadline     String
-    clientName   String?
-    clientEmail  String?
-    tipe         String
-    price        Float?
-    createdAt    DateTime      @default(now())
-    updatedAt    DateTime      @updatedAt
+    id          String        @id @default(cuid())
+    title       String
+    description String?
+    status      ProjectStatus @default(PENDING)
+    complexity  Complexity    @default(MEDIUM)
+    budget      Float?
+    deadline    String
+    clientName  String?
+    clientEmail String?
+    type        String
+    price       Float?
+    currency    String        @default("USD")
+    createdAt   DateTime      @default(now())
+    updatedAt   DateTime      @updatedAt
 
     // Relations
     userId    String

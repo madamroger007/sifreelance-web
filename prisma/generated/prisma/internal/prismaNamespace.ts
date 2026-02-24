@@ -908,8 +908,9 @@ export const ProjectScalarFieldEnum = {
   deadline: 'deadline',
   clientName: 'clientName',
   clientEmail: 'clientEmail',
-  tipe: 'tipe',
+  type: 'type',
   price: 'price',
+  currency: 'currency',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   userId: 'userId'
