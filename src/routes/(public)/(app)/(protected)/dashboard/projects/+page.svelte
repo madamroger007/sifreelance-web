@@ -32,7 +32,7 @@
       <TableProject projects={data.projects} />
     </section>
 
-    <CardViewMobile projects={data.projects} />
+    <CardViewMobile projects={data.projects} classes="md:hidden space-y-4" />
   </main>
   <AddButton href="/dashboard/projects/form" />
 </div>

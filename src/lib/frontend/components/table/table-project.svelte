@@ -1,19 +1,47 @@
 <script lang="ts">
   import type { Project } from "$lib/shared/types/types";
+  import Modal from "../card/modal.svelte";
 
   export let projects: Project[];
+
+  let deleteModalOpen = false;
+  let projectToDelete: string | null = null;
+
+  function openDeleteModal(projectId: string) {
+    projectToDelete = projectId;
+    deleteModalOpen = true;
+  }
+
+  function closeDeleteModal() {
+    deleteModalOpen = false;
+    projectToDelete = null;
+  }
+
+  function confirmDelete() {
+    if (projectToDelete) {
+      const form = document.getElementById(
+        `delete-form-${projectToDelete}`,
+      ) as HTMLFormElement;
+      if (form) {
+        form.submit();
+      }
+    }
+    closeDeleteModal();
+  }
 </script>
 
 <!-- Desktop Table View -->
-<div
-  class="hidden md:block table-container-1 overflow-hidden"
->
+<div class="hidden md:block table-container-1 overflow-hidden">
   <table class="w-full text-left border-collapse">
     <thead>
       <tr class="bg-slate-50 dark:bg-gray-800/50">
         <th
           class="px-4 py-3 text-[11px] font-bold text-gray-600 dark:text-slate-400 uppercase tracking-wider"
           >Project Name</th
+        >
+        <th
+          class="px-4 py-3 text-[11px] font-bold text-gray-600 dark:text-slate-400 uppercase tracking-wider"
+          >Description</th
         >
         <th
           class="px-4 py-3 text-[11px] font-bold text-gray-600 dark:text-slate-400 uppercase tracking-wider"
@@ -55,9 +83,13 @@
                   >deployed_code</span
                 >
               </div>
-              <span class="text-sm font-bold dark:text-white">{proj.title}</span>
+              <span class="text-sm font-bold dark:text-white">{proj.title}</span
+              >
             </div>
           </td>
+          <td class="px-4 py-4 text-sm text-slate-600 dark:text-gray-300"
+            >{proj.description}</td
+          >
           <td class="px-4 py-4 text-sm text-slate-600 dark:text-gray-300"
             >{proj.clientName}</td
           >
@@ -67,7 +99,10 @@
           <td class="px-4 py-4 text-xs text-slate-600 dark:text-gray-300"
             >{proj.complexity}</td
           >
-          <td class="px-4 py-4 font-bold text-primary text-sm text-slate-600 dark:text-gray-300">{proj.currency} {proj.price}</td>
+          <td
+            class="px-4 py-4 font-bold text-primary text-sm text-slate-600 dark:text-gray-300"
+            >{proj.currency} {proj.price}</td
+          >
           <td class="px-4 py-4">
             <span
               class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider {proj.status ===
@@ -80,16 +115,40 @@
               {proj.status}
             </span>
           </td>
-          <td class="px-4 py-4">
+          <td class="px-4 py-4 flex justify-center items-center">
             <a
               href="/dashboard/projects/form?id={proj.id}"
               class="p-1.5 hover:bg-white dark:hover:bg-gray-700 rounded text-slate-400 hover:text-primary transition-all"
             >
               <span class="material-symbols-outlined text-sm">edit</span>
             </a>
+            <form
+              id="delete-form-{proj.id}"
+              method="post"
+              action="?/delete"
+              class="hidden"
+            >
+              <input type="hidden" name="projectId" value={proj.id} />
+            </form>
+            <button
+              type="button"
+              on:click={() => openDeleteModal(proj.id)}
+              class="p-1.5 hover:bg-white dark:hover:bg-gray-700 rounded text-slate-400 hover:text-red-500 transition-all"
+            >
+              <span class="material-symbols-outlined text-sm">delete</span>
+            </button>
           </td>
         </tr>
       {/each}
     </tbody>
   </table>
 </div>
+
+<!-- Delete Confirmation Modal -->
+<Modal
+  bind:isOpen={deleteModalOpen}
+  title="Delete Project"
+  message="Are you sure you want to delete this project? This action cannot be undone."
+  onConfirm={confirmDelete}
+  onCancel={closeDeleteModal}
+/>

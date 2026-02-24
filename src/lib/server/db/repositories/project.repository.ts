@@ -17,7 +17,7 @@ export function findProjectByIdRepository(id: string) {
 
 export async function createProjectRepository(data: CreateProjectInput) {
     // Implementation to create project
-   return await prisma.project.create({
+    return await prisma.project.create({
         data,
     })
 }
@@ -32,8 +32,39 @@ export async function updateProjectRepository(id: string, data: Partial<UpdatePr
 
 export async function deleteProjectRepository(id: string) {
     // Implementation to delete project
-     await prisma.project.delete({
+    await prisma.project.delete({
         where: { id },
     })
+}
+
+export async function getTotalRevenueByUserIdRepository(userId: string) {
+    const result = await prisma.project.aggregate({
+        where: {
+            userId,
+            status: 'COMPLETED'
+        },
+        _sum: {
+            price: true
+        }
+    });
+    return result._sum.price || 0;
+}
+
+export async function getRevenueBreakdownByUserIdRepository(userId: string) {
+    const projects = await prisma.project.findMany({
+        where: {
+            userId,
+            price: { not: null }
+        },
+        select: {
+            price: true,
+            createdAt: true,
+            status: true
+        },
+        orderBy: {
+            createdAt: 'asc'
+        }
+    });
+    return projects;
 }
 
